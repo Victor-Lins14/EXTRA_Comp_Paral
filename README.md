@@ -54,8 +54,7 @@ static int contar(String texto, String palavra) {
 ```
 
 ### `ParallelCPU.java`
-- Quebrar o texto em palavras (`split(" ")`).
-- Dividir o array de palavras em `N` partes, uma por thread.
+- Dividir o texto em `N` partes, uma por thread, empurrando cada corte até o próximo espaço para não partir uma palavra ao meio.
 - Usar `Executors.newFixedThreadPool(N)`: cada tarefa conta a sua parte com o mesmo loop do serial.
 - Somar os resultados dos `Future`s e chamar `shutdown()`.
 - Receber o número de threads como parâmetro, para variar 1, 2, 4 e 8 (objetivo 3 do enunciado).
